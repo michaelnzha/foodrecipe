@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Recipes</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   
+    <!-- Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+            crossorigin="anonymous"></script>
+
+    <!-- Javascript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="module" src="js/admin.js"></script>
+    <script type="module" src="./js/search.js"></script>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+    <nav id="nav" class="navbar navbar-expand-lg bg-light"></nav>
+
+    <br>
+
+    <div class="container">
+        <h2>Search Recipes</h2><br>
+        <form>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-4">
+                        <input name="profile-fridge" class="form-check-input" type="checkbox" value="" id="profile-ingredients">
+                        <label for="profile-fridge">Include virtual fridge ingredients</label>
+                    </div>
+                    <div class="col-4">
+                        <input name="profile-equipment" class="form-check-input" type="checkbox" value="" id="profile-equipment">
+                        <label for="profile-equipment">Include kitchen equipment</label>
+                    </div>
+                    <div class="col-4">
+                        <input name="profile-restrictions" class="form-check-input" type="checkbox" value="" id="profile-restrictions">
+                        <label for="profile-restrictions">Include dietary restrictions</label>
+                    </div>
+                </div>
+            </div><br>
+            <div class="form-group">
+                <label for="query">Query</label>
+                <input type="text" id="search-query" class="form-control" name="query" placeholder="ex: mac and cheese, ..."><br>
+            </div>
+            <div class="form-group">
+                <label for="ingredients">Ingredients</label>
+                <input type="text" id="search-ingredient" class="form-control" name="ingredients" placeholder="ex: tomato, garlic, spinach, ..."><br>
+            </div>
+            <div class="form-group">
+                <label for="equipment">Equipment</label>
+                <input type="text" id="search-equipment" class="form-control" name="equipment" placeholder="ex: pot, pan, bowl, whisk, box grater, ..."><br>
+            </div>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="col">
+                    <label for="cuisines">Cuisine</label>
+                    <select id="search-cuisine" multiple="multiple" class="form-select" size="5"></select><br><br>
+                </div>
+                <div class="col">
+                    <label for="diets">Diets</label>
+                    <select id="search-diet" multiple="multiple" class="form-select" size="5"></select><br><br>
+                </div>
+                <div class="col">
+                    <label for="dishtype">Dish Type</label>
+                    <select id="search-dishtype" multiple="multiple" class="form-select" size="5"></select>
+                </div>
+                
+            </div>
+            <div class="form-group">
+                <input class="btn btn-primary" type="button" value="Submit Query" onclick="getRecipes('results')">
+            </div>
+            
+            
+        </form>
+    </div>
+
+    <div class="container">
+        <br>
+        <h2 id="results-title" style="display:none">Results</h2>
+        <br>
+
+        <div id=results class="row row-cols-1 row-cols-md-3 g-4">
+        </div>
+
+    </div>
+
+    <script type="text/javascript" src="./js/nav-bar.js"></script>
+    <script type="text/javascript" src="./js/recipe-search-criteria.js"></script>
+</body>
+</html>

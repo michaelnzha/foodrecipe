@@ -1,0 +1,132 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Create Recipe</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <!-- <link rel="stylesheet" href="assets/css/style.css"> -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   
+    <!-- Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+            crossorigin="anonymous"></script>
+
+    <!-- Javascript -->
+    <script type="module" src="js/admin.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+        <nav id="nav" class="navbar navbar-expand-lg bg-light"></nav>
+
+        <div class="container mt-md-4 mt-5 small-container white-container">
+            <div class="row">
+                <h2 class="col-10">Create/Edit Recipe</h2>
+                <input type="button" class="btn btn-primary btn-small pe-4 ps-4 col-2" value="Save" onclick="saveRecipe()"/>
+
+                <p class="text-16 text-secondary f500 mb-2 mt-3">Name</p>
+                <div class="mb-3">
+                    <input type="text" class="form-control" id="recipe-name" placeholder="The name of your recipe">
+                </div>
+
+                <p class="text-16 text-secondary f500 mb-2">Summary</p>
+                <div class="mb-3">
+                    <textarea rows="4" class="form-control" id="recipe-summary" placeholder="Summary"></textarea>
+                </div>
+
+                <div class="row row-cols-1 row-cols-md-6">
+                    <div class="col">
+                        <p class="text-16 text-secondary f500 mb-2">Prep Time (mins)</p>
+                        <div>
+                            <input type="text" class="form-control mb-2" id="recipe-preptime" placeholder="20">
+                        </div>
+                        <p class="text-16 text-secondary f500 mb-2">Cook Time (mins)</p>
+                        <div>
+                            <input type="text" class="form-control mb-2" id="recipe-cooktime" placeholder="10">
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-3">
+                        <p class="text-16 text-secondary f500 mb-2">Cuisines</p>
+                        <div class="mb-3">
+                            <select id="search-cuisine" multiple="multiple" class="form-select" size="5"></select>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <p class="text-16 text-secondary f500 mb-2">Dish Types</p>
+                        <div class="mb-3">
+                            <select id="search-dishtype" multiple="multiple" class="form-select" size="5"></select>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <p class="text-16 text-secondary f500 mb-2">Diets</p>
+                        <div class="mb-3">
+                            <select id="search-diet" multiple="multiple" class="form-select" size="5"></select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-5">
+    
+                    <form class="me-md-5">
+
+                    </form>
+                </div>
+                <div class="col-md-1 col-lg-1"></div>
+    
+                <div class="col-md-5 col-lg-5 pt-md-0 pt-5">
+    
+                    <form class="me-md-5">
+
+                    </form>
+                </div>
+
+                <div class="row row-cols-1 row-cols-md-3">
+                    <div class="col">
+                        <p class="text-16 text-secondary f500 pt-3 mb-2">Ingredients</p>
+                        <div class="mt-4">
+                            <input type="button" class="btn btn-primary btn-small pe-4 ps-4 mb-4" value="Add" onclick="addIngredient()"/>
+                        </div>
+                        <div id="ingredients-list" class="mb-3">
+                            <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="Enter ingredient">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <p class="text-16 text-secondary f500 pt-3 mb-2">Instructions</p>
+                        <div class="mt-4">
+                            <input type="button" class="btn btn-primary btn-small pe-4 ps-4 mb-4" value="Add" onclick="addInstruction()"/>
+                        </div>
+                        <div id="instructions-list"class="mb-3">
+                            <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="Enter step instruction">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <p class="text-16 text-secondary f500 pt-3 mb-2">Equipment</p>
+                        <div class="mt-4">
+                            <input type="button" class="btn btn-primary btn-small pe-4 ps-4 mb-4" value="Add" onclick="addEquipment()"/>
+                        </div>
+                        <div id="equipment-list" class="mb-3">
+                            <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="Enter equipment">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="./js/nav-bar.js"></script>
+    <script type="text/javascript" src="./js/recipe-search-criteria.js"></script>
+    <script type="module" src="./js/create-recipe.js"></script>
+    
+</body>
+</html>

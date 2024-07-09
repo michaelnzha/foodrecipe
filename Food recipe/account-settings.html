@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Home</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <!-- <link rel="stylesheet" href="assets/css/style.css"> -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   
+    <!-- Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+            crossorigin="anonymous"></script>
+
+    <!-- Javascript -->
+    <script type="module" src="js/admin.js"></script>
+    <script type="module" src="js/account-settings.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+    <nav id="nav" class="navbar navbar-expand-lg bg-light"></nav>
+
+    <div class="container pt-3 small-container">
+
+        <div class="row pt-5">
+            <div class="col-md-12 pb-4 text-center">
+                <h2>
+                    Account Settings
+                </h2>
+            </div>
+
+            
+
+
+            <div class="col-lg-6 pt-md-0  offset-lg-3 col-md-10 offset-md-1">
+                
+
+                <form class="bg-white pt-5 pb-5 ps-4 pe-4">
+                    <div class="mb-3">
+                        <label for="currentPwd" class="form-label">Enter current password (mandatory)</label>
+                        <input type="password" class="form-control" id="currentPwd" placeholder="*****">
+                    </div>
+                    <div class="mb-3">
+                        <label for="newPwd" class="form-label">Enter new password (if desired)</label>
+                        <input type="password" class="form-control" id="newPwd" placeholder="*****">
+                    </div>
+                    <div class="mb-3">
+                        <label for="reenterNewPwd" class="form-label">Re-enter new password</label>
+                        <input type="password" class="form-control" id="reenterNewPwd" placeholder="*****">
+                    </div>
+                    <div class="mb-3">
+                        <label for="newEmail" class="form-label">Enter new email address (if desired)</label>
+                        <input type="email" class="form-control" id="newEmail" placeholder="name@example.com">
+                    </div>
+                    <div class="mb-3">
+                        <label for="reenterNewEmail" class="form-label">Re-enter new email address</label>
+                        <input type="email" class="form-control" id="reenterNewEmail" placeholder="name@example.com">
+                    </div>
+                  
+                    <div class="mt-4 text-center">
+                        <input type="button" class="btn btn-primary btn-small pe-4 ps-4" value="Save" onclick="saveAccountSettings()"/>
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+    <script type="text/javascript" src="./js/nav-bar.js"></script>
+</body>
+</html>

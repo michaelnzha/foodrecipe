@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" class="indexhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Javascript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- Firebase-->
+    <script type="module" src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+
+    <!-- Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+
+    <script type="module" src="js/auth.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Welcome</title>
+</head>
+
+<body class="indexbody">
+
+    <div class="container d-flex h-100">
+
+        <div class="card text-center mx-auto row justify-content-center align-self-center" style="width: 24rem;">
+            <div class="card-header">
+                <h5>Meal Planner</h5>
+            </div>
+            <div class="card-body">
+                <h3>Become a Member</h3>
+                <p>Are you looking for the perfect recipe? We're here to help you!</p>
+                <button id="signupbtn" type="button" class="btn btn-primary" data-bs-toggle="modal"
+                    data-bs-target="#signupModal" data-bs-whatever="@mdsignup">Sign Up</button>
+                <hr>
+                <h3>Welcome Back</h3>
+                <p>We missed you. Sign back in to browse through your favourites.</p>
+                <button id="loginbtn" type="button" class="btn btn-primary" data-bs-toggle="modal"
+                    data-bs-target="#loginModal" data-bs-whatever="@mdlogin">Log In</button>
+            </div>
+        </div>
+
+
+        <div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="signupModalLabel">Sign Up</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div id="signupForm">
+                            <form>
+                                <div class="container">
+                                    <div class="row mb-1">
+                                        <div class="col mb-1">
+                                            <label for="fname" class="form-label">First Name:</label><br>
+                                            <input type="text" id="fname" name="fname" class="form-control" required>
+                                        </div>
+                                        <div class="col mb-1">
+                                            <label for="lname" class="form-label">Last Name:</label><br>
+                                            <input type="text" id="lname" name="lname" class="form-control" required>
+                                        </div>
+                                    </div>
+                                    <div class="mb-1">
+                                        <label for="signup-uname" class="form-label">Username:</label><br>
+                                        <input type="text" id="signup-uname" name="signup-uname"
+                                            class="form-control" required><br>
+                                        <div id="signup-uname-alert" class="alert alert-danger" role="alert"></div>
+                                    </div>
+                                    <div class="mb-1">
+                                        <label for="email" class="form-label">Email:</label><br>
+                                        <input type="email" id="email" name="email" class="form-control"
+                                            placeholder="example@ryerson.ca" aria-label="example@ryerson.ca" required><br>
+                                        <div id="signup-email-alert" class="alert alert-danger" role="alert"></div>
+                                    </div>
+                                    <div class="mb-1">
+                                        <label for="signup-pwd1" class="form-label">Password:</label><br>
+                                        <input type="password" id="signup-pwd1" name="signuo-pwd1"
+                                            class="form-control" required><br>
+                                    </div>
+                                    <div class="mb-1">
+                                        <label for="signup-pwd2" class="form-label">Confirm Password:</label><br>
+                                        <input type="password" id="signup-pwd2" name="signuo-pwd2"
+                                            class="form-control" required><br>
+                                        <div id="signup-pwd-alert" class="alert alert-danger" role="alert"></div>
+                                    </div>
+                                    <button id="signup-submit-btn" type="submit" class="btn btn-primary">Submit</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="loginModalLabel">Log In</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div id="loginForm">
+                            <form methos="post">
+                                <div class="container">
+                                    <label for="login-uname" class="form-label">Username:</label><br>
+                                    <input type="text" id="login-uname" name="login-uname" class="form-control" required><br>
+                                    <label for="login-pwd" class="form-label">Password:</label><br>
+                                    <input type="password" id="login-pwd" name="login-pwd" class="form-control" required><br>
+                                    <div id="login-alert" class="alert alert-danger" role="alert"></div>
+                                    <button id="login-submit-btn" type="submit" class="btn btn-primary">Submit</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+</body>
+
+</html>
